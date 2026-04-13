@@ -7,6 +7,8 @@ interface HukkaLogoProps {
   className?: string;
 }
 
+const basePath = process.env.NODE_ENV === "production" ? "/hukka-clothing" : "";
+
 export default function HukkaLogo({ className }: HukkaLogoProps) {
   return (
     <div 
@@ -21,8 +23,8 @@ export default function HukkaLogo({ className }: HukkaLogoProps) {
       <div 
         className="w-32 h-10 md:w-36 md:h-12 lg:w-40 lg:h-14 bg-gradient-to-b from-[#FFF2D8] via-[#C19A6B] to-[#755530] hover:brightness-125 transition-all duration-300"
         style={{
-          maskImage: 'url(/images/hukka-transparent-logo.png)',
-          WebkitMaskImage: 'url(/images/hukka-transparent-logo.png)',
+          maskImage: `url(${basePath}/images/hukka-transparent-logo.png)`,
+          WebkitMaskImage: `url(${basePath}/images/hukka-transparent-logo.png)`,
           maskSize: 'contain',
           WebkitMaskSize: 'contain',
           maskRepeat: 'no-repeat',

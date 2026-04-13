@@ -42,6 +42,8 @@ const featuredProducts = [
   },
 ];
 
+const basePath = process.env.NODE_ENV === "production" ? "/hukka-clothing" : "";
+
 export default function ShopSection() {
   const [selectedProduct, setSelectedProduct] = useState<typeof featuredProducts[0] | null>(null);
 
@@ -94,7 +96,7 @@ export default function ShopSection() {
               <div className="relative aspect-[3/4] bg-gradient-to-b from-[#1F1F1F] to-[#111111] rounded-sm overflow-hidden mb-6 border border-white/5 shadow-md shadow-black/40 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] group-hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
                 <img
-                  src={product.image}
+                  src={`${basePath}${product.image}`}
                   alt={product.name}
                   className="w-full h-full object-cover object-center brightness-95 contrast-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />

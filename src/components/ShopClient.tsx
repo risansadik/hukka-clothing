@@ -45,6 +45,8 @@ const products = [
   { id: 14, name: "Washed Black Denim", category: "Pants", sub: "Jeans", price: "$110", image: "/images/pants_1.png" },
 ];
 
+const basePath = process.env.NODE_ENV === "production" ? "/hukka-clothing" : "";
+
 export default function ShopClient() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeSub, setActiveSub] = useState("All");
@@ -149,7 +151,7 @@ export default function ShopClient() {
                 <div className="relative aspect-[4/5] bg-brand-surface rounded-sm overflow-hidden mb-4 md:mb-6 shadow-lg shadow-black/50 group-hover:shadow-brand-primary/20 transition-all duration-500">
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/90 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img
-                    src={product.image}
+                    src={`${basePath}${product.image}`}
                     alt={product.name}
                     className="w-full h-full object-cover object-center group-hover:scale-110 group-hover:-rotate-1 transition-transform duration-700 ease-out"
                   />
