@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #C19A6B; /* Golden brown luxury accent */
+  --color-brand-accent: #A88258; /* Darker golden brown */
+  --color-brand-bg: #0B0B0B; /* Deep sophisticated black */
+  --color-brand-surface: #1A1A1A; /* Secondary slightly lighter black */
+  --color-brand-surface-light: #282828; 
+  --color-brand-dark: #000000; /* Pure black */
+  --color-brand-text: #EAEAEA; /* Soft gray for readability */
+  --font-sans: var(--font-outfit), sans-serif;
+  --animate-gold-shine: gold-shine 3s infinite alternate;
+}
+
+@keyframes gold-shine {
+  0% { text-shadow: 0 0 5px rgba(193, 154, 107, 0.2); }
+  100% { text-shadow: 0 0 15px rgba(193, 154, 107, 0.6); }
+}
+
+:root {
+  --background: #0B0B0B;
+  --foreground: #FFFFFF;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Horizontal Cinematic Smoke Drifts */
+@keyframes smoke-drift {
+  0% { transform: translateX(0) scale(1.02); }
+  50% { transform: translateX(-8%) scale(1.0); }
+  100% { transform: translateX(0) scale(1.02); }
+}
+
+@keyframes smoke-drift-reverse {
+  0% { transform: translateX(-8%) scale(1.0); }
+  50% { transform: translateX(0) scale(1.05); }
+  100% { transform: translateX(-8%) scale(1.0); }
+}
+
+.animate-smoke-slow {
+  animation: smoke-drift 40s ease-in-out infinite alternate;
+}
+
+.animate-smoke-medium {
+  animation: smoke-drift-reverse 25s ease-in-out infinite alternate;
+}
