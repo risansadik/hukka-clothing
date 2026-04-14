@@ -33,7 +33,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
   }, [product]);
 
   const phoneNumber = "YOUR_NUMBER_HERE"; // Placeholder
-  const message = `Hi, I'm interested in this HUKKA ${product.name}`;
+  const message = `Hi, I'm interested in this HUKKA ${displayedProduct?.name || ''}`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
