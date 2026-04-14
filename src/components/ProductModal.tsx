@@ -19,6 +19,8 @@ interface ProductModalProps {
   onClose: () => void;
 }
 
+const basePath = process.env.NODE_ENV === "production" ? "/hukka-clothing" : "";
+
 export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
   if (!product) return null;
 
@@ -58,7 +60,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
             {/* Image Side */}
             <div className="w-full md:w-1/2 aspect-[4/5] object-cover max-h-[40vh] md:max-h-none md:h-[500px] bg-brand-surface-light relative shrink-0">
               <img
-                src={product.image}
+                src={`${basePath}${product.image}`}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
