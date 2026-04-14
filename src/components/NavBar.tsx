@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ShoppingBag, Menu, X } from "lucide-react";
+import Link from "next/link";
 import HukkaLogo from "./HukkaLogo";
 
 export default function NavBar() {
@@ -18,9 +19,9 @@ export default function NavBar() {
   }, []);
 
   const navLinks = [
-    { name: "Shop", href: "#shop" },
-    { name: "About", href: "#about" },
-    { name: "Location", href: "#location" },
+    { name: "Shop", href: "/#shop" },
+    { name: "About", href: "/#about" },
+    { name: "Location", href: "/#location" },
   ];
 
   return (
@@ -35,20 +36,20 @@ export default function NavBar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#">
+        <Link href="/">
           <HukkaLogo />
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="text-sm font-medium text-brand-text hover:text-brand-dark transition-colors tracking-wider uppercase"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -77,14 +78,14 @@ export default function NavBar() {
         >
           <div className="px-6 py-4 flex flex-col space-y-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg text-brand-text hover:text-brand-dark uppercase tracking-wide"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
         </motion.div>
