@@ -39,7 +39,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
   return (
     <AnimatePresence>
       {isOpen && displayedProduct && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -56,18 +56,18 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ type: "spring", damping: 25, stiffness: 350 }}
-            className="relative w-full max-w-[800px] bg-[#141414] shadow-2xl rounded flex flex-col md:flex-row border border-white/5 overflow-hidden"
+            className="relative w-[95%] sm:w-full max-w-[800px] max-h-[85vh] overflow-y-auto no-scrollbar bg-[#141414] shadow-2xl rounded flex flex-col md:flex-row border border-white/5"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-3 right-3 z-10 w-9 h-9 bg-black/60 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-brand-primary transition-all duration-300"
+              className="absolute top-3 right-3 z-50 w-9 h-9 bg-black/80 border border-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-brand-primary hover:border-brand-primary transition-all duration-300"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Image Side */}
-            <div className="w-full md:w-[45%] h-[350px] md:h-auto bg-gradient-to-b from-[#1c1c1c] to-[#111] relative shrink-0">
+            <div className="w-full md:w-[45%] h-[240px] sm:h-[300px] md:h-auto bg-gradient-to-b from-[#1c1c1c] to-[#111] relative shrink-0">
               <img
                 src={`${basePath}${displayedProduct.image}`}
                 alt={displayedProduct.name}
@@ -76,7 +76,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
             </div>
 
             {/* Info Side */}
-            <div className="w-full md:w-[55%] p-6 md:p-10 flex flex-col justify-center">
+            <div className="w-full md:w-[55%] p-5 sm:p-6 md:p-10 flex flex-col justify-center">
               <span className="text-brand-primary uppercase tracking-widest text-[10px] font-bold mb-2 flex items-center gap-2">
                 {displayedProduct.category} {displayedProduct.sub && <><span className="text-gray-600">/</span> {displayedProduct.sub}</>}
               </span>
