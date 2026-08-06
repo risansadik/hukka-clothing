@@ -2,13 +2,14 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Live-success?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Design-Premium_Dark-000000?style=for-the-badge&logo=css3" alt="Design" />
-  <img src="https://img.shields.io/badge/Tech-HTML%20%7C%20CSS%20%7C%20JS-blue?style=for-the-badge" alt="Tech Stack" />
+  <img src="https://img.shields.io/badge/Framework-Next.js_16-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Styling-Tailwind_CSS_4-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
 </div>
 
 <br/>
 
-**HUKKA** is a modern, front-end e-commerce concept for a premium men's clothing brand. Designed with a sleek dark aesthetic, gold accents, and fluid animations, this project demonstrates high-end web design and robust interactive UI components without the use of heavy frameworks.
+**HUKKA** is a high-performance, modern e-commerce storefront for a premium men's clothing brand. Built with a cutting-edge React stack, it features immersive 3D elements, fluid scroll-linked animations, and a sophisticated dark aesthetic with gold accents.
 
 🔗 **[Live Demo](https://risansadik.github.io/hukka-clothing)**
 
@@ -16,23 +17,29 @@
 
 ## ✨ Features
 
-- 🎨 **Premium Aesthetic**: A sophisticated dark theme with carefully curated typography and gold/copper highlights that match a high-end menswear brand voice.
-- 📱 **Fully Responsive**: Flawless layout scaling across desktop, tablet, and mobile devices, featuring a custom animated mobile hamburger menu.
-- 🔍 **Advanced Multi-tier Filtering**: Users can seamlessly filter products by primary categories (Shirts, T-Shirts, Pants) and further refine by secondary styles (Linen, Formal, Casual) with instant visual updates.
-- 🛍️ **Interactive Quick View**: Custom-built product modals that allow users to view item details and descriptions without leaving the main shopping grid.
-- ⚡ **Smooth Animations**: High-performance CSS micro-animations, hover states, and smooth scrolling for an engaging user experience.
+- 🎨 **Premium Aesthetic**: A sophisticated dark theme with carefully curated typography and styling that matches a high-end menswear brand voice.
+- 🧊 **Immersive 3D Experiences**: Integrates WebGL elements using Three.js and React Three Fiber to create interactive visual depth.
+- 🎞️ **Cinematic Animations**: Complex, high-performance scroll animations and page transitions powered by Framer Motion, GSAP, and Lenis smooth scrolling.
+- 📱 **Fully Responsive Layout**: Flawless scaling across desktop, tablet, and mobile devices, utilizing modern Tailwind CSS patterns.
+- ⚡ **Optimized Performance**: Next.js App Router providing lightning-fast rendering and an excellent developer experience.
 
 ## 🛠️ Tech Stack
 
-This project was built utilizing core web technologies, focusing on performance, semantic structure, and vanilla implementations:
+This project was built utilizing an advanced modern web development stack:
 
-- **HTML5**: Semantic markup for accessibility and SEO.
-- **CSS3**: Vanilla CSS utilizing Flexbox, CSS Grid, and custom variables for the design system.
-- **JavaScript (ES6+)**: Handles the DOM manipulation, filtering logic, and modal interactions without relying on external UI libraries.
+- **Core Framework**: [Next.js 16](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) & `clsx` / `tailwind-merge`
+- **Animations & Interaction**: 
+  - [Framer Motion](https://www.framer.com/motion/)
+  - [GSAP](https://gsap.com/)
+  - [Lenis](https://lenis.studiofreight.com/) (Smooth Scrolling)
+- **3D Graphics**: [Three.js](https://threejs.org/), [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [@react-three/drei](https://github.com/pmndrs/drei)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
 ## 🚀 Getting Started
 
-To run this project locally, you don't need any complex build tools. Just clone the repository and open it in your browser.
+To run this project locally:
 
 ```bash
 # Clone the repository
@@ -41,17 +48,20 @@ git clone https://github.com/risansadik/hukka-clothing.git
 # Navigate into the directory
 cd hukka-clothing
 
-# Open index.html in your default browser, or use Live Server in VS Code
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 🗺️ Roadmap & Future Enhancements
 
-While the current version showcases a strong frontend foundation, future iterations could include:
-
-- [ ] **Shopping Cart Integration**: Implementing a fully functional cart drawer using local storage.
-- [ ] **Search Functionality**: Adding a robust text-based search bar for finding specific items.
-- [ ] **Dynamic Data Fetching**: Migrating hardcoded HTML product cards to a JSON-based data structure or REST API for easier inventory management.
-- [ ] **Backend Integration**: Connecting to a headless CMS or Node.js backend for user authentication and order processing.
+- [ ] **Shopping Cart Integration**: Implementing a fully functional global cart state.
+- [ ] **Dynamic Data Fetching**: Connecting to a headless CMS (like Sanity or Strapi) or Shopify Storefront API.
+- [ ] **Backend Integration**: Setting up secure user authentication and order processing.
 
 ## 🤝 Contributing
 
